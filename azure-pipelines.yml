@@ -13,12 +13,14 @@ steps:
 - task: AzureResourceManagerTemplateDeployment@3
   inputs:
     deploymentScope: 'Resource Group'
-    azureResourceManagerConnection: 'MSDN Platforms Subscription(1ccfe38b-d78a-42b5-a870-2d835c22f9d0)'
+    azureResourceManagerConnection: 'MSDN Platforms Subscription(1)(1ccfe38b-d78a-42b5-a870-2d835c22f9d0)'
     subscriptionId: '1ccfe38b-d78a-42b5-a870-2d835c22f9d0'
     action: 'Create Or Update Resource Group'
     resourceGroupName: 'AzureRmPipeline-rg'
-    location: 'Central US'
+    location: 'East US'
     templateLocation: 'Linked artifact'
-    csmFile: 'CreateWebApp/azuredeploy.json'
-    overrideParameters: '-projectName AzureArmPipeLine -linkedTemplateUri https://raw.githubusercontent.com/smardhekar/AzureRmPipeline/master/CreateWebApp/linkedStorageAccount.json'
+    csmFile: 'CreateWebApp/azuredeplou.json'
+    overrideParameters: |
+      '-projectName AzureArmPipeLine
+       -linkedTemplateUri https://raw.githubusercontent.com/smardhekar/AzureRmPipeline/master/CreateWebApp/linkedStorageAccount.json'
     deploymentMode: 'Incremental'
